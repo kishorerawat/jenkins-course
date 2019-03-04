@@ -21,14 +21,14 @@ node {
     // mark build as failed
     currentBuild.result = "FAILURE";
     // set variables
-    def subject = "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} ${currentBuild.result}"
-    def content = '${JELLY_SCRIPT,template="html"}'
+    def subject = "Jenkins Test"
+    def content = 'Test email from Jenkins build failure'
 
     // send email
     //if(to != null && !to.isEmpty()) {
       emailext(body: content, mimeType: 'text/html',
          replyTo: '$DEFAULT_REPLYTO', subject: subject,
-         to: '$DEFAULT_RECIPIENTS', attachLog: true )
+         to: '$DEFAULT_RECIPIENTS', attachLog: false )
     //}
 
     // mark current build as a failure and throw the error
