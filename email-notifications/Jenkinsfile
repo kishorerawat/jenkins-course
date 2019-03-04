@@ -5,7 +5,7 @@ node {
   //        [$class: 'CulpritsRecipientProvider'],
   //        [$class: 'DevelopersRecipientProvider'],
   //        [$class: 'RequesterRecipientProvider']
-  def to = emailextrecipients(['$DEFAULT_RECIPIENTS'])
+  def to = '$DEFAULT_RECIPIENTS'
   //])
 
   // job
